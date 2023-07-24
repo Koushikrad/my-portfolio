@@ -67671,10 +67671,10 @@ s=A.wb("Projects",A.hh(q,q,B.k,q,q,q,q,q,q,q,q,q,q,q,B.b4,q,q,!0,q,q,q,q,q,q,q,q
 r=A.aaO(B.z2,q)
 return A.agu(new A.BV(o,q),A.a16(B.eQ,A.a([A.rl(q,A.agC(new A.i_(B.yF,A.Rz(A.aah(A.a([new A.FG(q),new A.In(10,A.a([m,l,A.hd(new A.NT(new A.Vk(),q,q,q,k,B.u,q,!1,q,new A.NU(s,r,q),q),45,200)],p),q)],p),B.b_,B.bu),q,q),q)),B.u,q,new A.aC(1/0,1/0,1/0,1/0),new A.eF(q,n,q,q,q,q,B.aY),q,q,q,q,q,q,q)],p),B.hD))}}
 A.Vj.prototype={
-$0(){var s=document.createElement("a")
-s.href="lib/assets/resume/resume.pdf"
-s.download="Koushik_Radhakrishnan"
-s.click()},
+$0(){var s="lib/assets/resume/resume.pdf",r=document.createElement("a")
+r.href=s
+r.download=s
+r.click()},
 $S:0}
 A.Vk.prototype={
 $0(){},
