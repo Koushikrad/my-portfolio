@@ -131,7 +131,7 @@ class HomePage extends StatelessWidget {
                                       new html.AnchorElement(
                                           href: 'lib/assets/resume/resume.pdf');
                                   anchorElement.download =
-                                      'Koushik_Radhakrishnan';
+                                      'lib/assets/resume/resume.pdf';
                                   anchorElement.click();
                                 },
                                 label: Text('Download Resume',
