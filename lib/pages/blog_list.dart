@@ -28,7 +28,7 @@ class BlogList extends StatelessWidget {
           ),
         ),
       body: Center(
-        child: SingleScrollChildView(
+        child: SingleChildScrollView(
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
