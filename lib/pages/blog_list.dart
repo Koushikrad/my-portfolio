@@ -28,7 +28,8 @@ class BlogList extends StatelessWidget {
           ),
         ),
       body: Center(
-        child: Column(
+        child: SingleScrollChildView(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -37,6 +38,7 @@ class BlogList extends StatelessWidget {
             Text('BLOGS COMING SOON !', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, letterSpacing: 2)),
           ],
         ),
+       ),
       ),
     );
   }
