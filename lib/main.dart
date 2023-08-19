@@ -5,6 +5,7 @@ import 'dart:html' as html;
 
 import 'package:my_portfolio/pages/projects.dart';
 import 'package:my_portfolio/widgets/custom_app_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(PortfolioApp());
@@ -19,7 +20,9 @@ class PortfolioApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Koushik Radhakrishnan',
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        //fontFamily: 'Roboto',
+        textTheme: GoogleFonts.openSansTextTheme(),
+
       ),
       home: HomePage(),
       routes: {

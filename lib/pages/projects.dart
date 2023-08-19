@@ -44,7 +44,7 @@ class Projects extends StatelessWidget {
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Koushik',
+              Text('Projects',
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w900,
@@ -223,7 +223,7 @@ class Projects extends StatelessWidget {
                     SizedBox(height: 30),
                     Container(
                         padding: EdgeInsets.symmetric(vertical: 30),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
                               color: Color(
