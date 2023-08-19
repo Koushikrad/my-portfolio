@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_portfolio/pages/blog_list.dart';
+import 'package:koushik_portfolio/pages/blog_list.dart';
 import 'dart:html' as html;
 
-import 'package:my_portfolio/pages/projects.dart';
-import 'package:my_portfolio/widgets/custom_app_bar.dart';
+import 'package:koushik_portfolio/pages/projects.dart';
+import 'package:koushik_portfolio/widgets/custom_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(PortfolioApp());
+  runApp(const PortfolioApp());
 }
 
 class PortfolioApp extends StatelessWidget {
@@ -24,9 +24,9 @@ class PortfolioApp extends StatelessWidget {
         textTheme: GoogleFonts.openSansTextTheme(),
 
       ),
-      home: HomePage(),
+      home: const HomePage(),
       routes: {
-        '/blogs': (context) => BlogList(),
+        '/blogs': (context) => const BlogList(),
         '/projects': (context) => Projects(),
       },
     );
@@ -62,8 +62,8 @@ class HomePage extends StatelessWidget {
 
       body: Stack(children: [
         Container(
-          constraints: BoxConstraints.expand(),
-          decoration: BoxDecoration(
+          constraints: const BoxConstraints.expand(),
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("lib/assets/images/background-4.jpg"),
               fit: BoxFit.cover,
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(30.0),
                 child: Center(
                   child: Column(children: [
-                    ProfileSection(),
+                    const ProfileSection(),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                           onTap: () {
                             Navigator.pushNamed(context, '/projects');
                           },
-                          child: Text(
+                          child: const Text(
                             'PROJECTS',
                             style: TextStyle(
                               fontWeight: FontWeight.w300,
@@ -93,12 +93,12 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         InkWell(
                           onTap: () {
                             Navigator.pushNamed(context, '/blogs');
                           },
-                          child: Text(
+                          child: const Text(
                             'BLOGS',
                             style: TextStyle(
                               fontWeight: FontWeight.w300,
@@ -108,14 +108,14 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         SizedBox(
                             height: 40,
                             child: ElevatedButton.icon(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xfff5461c)),
+                                    backgroundColor: const Color(0xfff5461c)),
                                 onPressed: () {
-                                  html.AnchorElement anchorElement = new html
+                                  html.AnchorElement anchorElement = html
                                           .AnchorElement(
                                       href:
                                           'assets/lib/assets/resume/resume.pdf');
@@ -123,11 +123,11 @@ class HomePage extends StatelessWidget {
                                       'Koushik_Radhakrishnan';
                                   anchorElement.click();
                                 },
-                                label: Text('Resume',
+                                label: const Text('Resume',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16)),
-                                icon: Icon(Icons.download)))
+                                icon: const Icon(Icons.download)))
                       ],
                     )
                   ]),
@@ -140,25 +140,27 @@ class HomePage extends StatelessWidget {
 }
 
 class ProfileSection extends StatelessWidget {
+  const ProfileSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     var isMobile = MediaQuery.of(context).size.width < 600;
 
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 60,
             backgroundImage: AssetImage('lib/assets/images/koushik-3.png'),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text('Hi! I Am Koushik Radhakrishnan',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w900, fontSize: isMobile ? 20 : 30)),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SizedBox(
             width: 500,
             child: Text(

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_portfolio/pages/blog_list.dart';
-import 'dart:html' as html;
 
 import '../widgets/custom_app_bar.dart';
 
@@ -60,22 +57,22 @@ class Projects extends StatelessWidget {
         ),
         body: Stack(
             children: [Container(
-            constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(
+            constraints: const BoxConstraints.expand(),
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("lib/assets/images/background-3.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
             child: SingleChildScrollView(
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        padding: EdgeInsets.symmetric(vertical: 30),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        decoration: const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
                               color: Color(
@@ -100,13 +97,13 @@ class Projects extends StatelessWidget {
                                         fontSize: topicSize,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 2)),
-                                SizedBox(width: 10),
-                                Text('(December 2022 - Present)',
+                                const SizedBox(width: 10),
+                                const Text('(December 2022 - Present)',
                                     style: TextStyle(
                                         fontSize: 12.0, letterSpacing: 2)),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Wrap(
                                 runSpacing: 10,
                                 alignment: WrapAlignment.start,
@@ -115,34 +112,34 @@ class Projects extends StatelessWidget {
                                   Text('IFIS Asia Private Ltd.,',
                                       style: TextStyle(
                                           fontSize: topicSize, letterSpacing: 2)),
-                                  Text('(Working under SGX Group - Singapore)',
+                                  const Text('(Working under SGX Group - Singapore)',
                                       style: TextStyle(
                                           fontSize: 12, letterSpacing: 2))
                                 ])
                           ],
                         )),
-                    SizedBox(height: 20),
-                    Text('Project 1: SGX Investor Portal',
+                    const SizedBox(height: 20),
+                    const Text('Project 1: SGX Investor Portal',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2)),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
                         children: sgxExperience.map((item) {
                           return Row(children: [
-                            Text(
+                            const Text(
                               "\u2022",
                               style: TextStyle(fontSize: 30),
                             ), //bullet text
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ), //space between bullet and text
                             Expanded(
                               child: Text(item,
-                                  style: TextStyle(fontSize: 16)), //text
+                                  style: const TextStyle(fontSize: 16)), //text
                             )
                           ]);
                         }).toList(),
@@ -150,10 +147,10 @@ class Projects extends StatelessWidget {
                     ),
             
             
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Container(
-                        padding: EdgeInsets.symmetric(vertical: 30),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        decoration: const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
                               color: Color(
@@ -178,41 +175,41 @@ class Projects extends StatelessWidget {
                                         fontSize: topicSize,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 2)),
-                                SizedBox(width: 10),
-                                Text('(March 2018 - December 2022)',
+                                const SizedBox(width: 10),
+                                const Text('(March 2018 - December 2022)',
                                     style: TextStyle(
                                         fontSize: 12.0, letterSpacing: 2)),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text('Freshworks',
                                 style: TextStyle(
                                     fontSize: topicSize, letterSpacing: 2))
                           ],
                         )),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                         'Project 1: Smart HR Software for Business (HRMS) - FRESHTEAM',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2)),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
                         children: fWExperience.map((item) {
                           return Row(children: [
-                            Text(
+                            const Text(
                               "\u2022",
                               style: TextStyle(fontSize: 30),
                             ), //bullet text
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ), //space between bullet and text
                             Expanded(
                               child: Text(item,
-                                  style: TextStyle(fontSize: 16)), //text
+                                  style: const TextStyle(fontSize: 16)), //text
                             )
                           ]);
                         }).toList(),
@@ -220,9 +217,9 @@ class Projects extends StatelessWidget {
                     ),
             
             
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Container(
-                        padding: EdgeInsets.symmetric(vertical: 30),
+                        padding: const EdgeInsets.symmetric(vertical: 30),
                         decoration: const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -248,47 +245,47 @@ class Projects extends StatelessWidget {
                                         fontSize: topicSize,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 2)),
-                                SizedBox(width: 10),
-                                Text('(June 2015 - March 2018)',
+                                const SizedBox(width: 10),
+                                const Text('(June 2015 - March 2018)',
                                     style: TextStyle(
                                         fontSize: 12.0, letterSpacing: 2)),
                               ],
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text('IVTL Infoview Technologies Pvt Ltd.,',
                                 style: TextStyle(
                                     fontSize: topicSize, letterSpacing: 2))
                           ],
                         )),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                         'Project 1: Web-based Enterprise Resource Planning tool - AI WORKS:',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2)),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
                         children: ivtlExperience.map((item) {
                           return Row(children: [
-                            Text(
+                            const Text(
                               "\u2022",
                               style: TextStyle(fontSize: 30),
                             ), //bullet text
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ), //space between bullet and text
                             Expanded(
                               child: Text(item,
-                                  style: TextStyle(fontSize: 16)), //text
+                                  style: const TextStyle(fontSize: 16)), //text
                             )
                           ]);
                         }).toList(),
                       ),
                     ),
-                    SizedBox(height: 30)
+                    const SizedBox(height: 30)
                   ]),
             ))]));
   }

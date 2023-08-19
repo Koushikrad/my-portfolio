@@ -37,7 +37,7 @@ class BlogList extends StatelessWidget {
           ),
         ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,7 +45,7 @@ class BlogList extends StatelessWidget {
               spacing: 16.0,
               runSpacing: 16.0,
               children: blogs.map((blog) => 
-                Container(
+                SizedBox(
                   height: 500.0,
                   width: isMobile ? MediaQuery.of(context).size.width - 60 : 500.0,
                   child: InkWell(
@@ -63,8 +63,8 @@ class BlogList extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Image.asset(blog['imageURL']!, height: 300, fit: BoxFit.cover, scale: 1.0),
-                            Text(blog['title']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
-                            Text(blog['description']!, overflow: TextOverflow.ellipsis, maxLines: 3, style: TextStyle(fontSize: 14),),
+                            Text(blog['title']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
+                            Text(blog['description']!, overflow: TextOverflow.ellipsis, maxLines: 3, style: const TextStyle(fontSize: 14),),
                             //LinkBut
                             InkWell(
                               hoverColor: Colors.transparent,
