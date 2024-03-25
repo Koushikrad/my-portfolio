@@ -7,9 +7,28 @@ class Projects extends StatelessWidget {
   // Sample project data (dummy values)
 
   final List<String> sgxExperience = [
-    'I\'m one of the two front-end developers who is responsible for developing portals for Investors.',
-    'Building re-usable forms, components and widgets using Web Components.',
-    'Contributing to performance of the website by suggesting effective caching mechanism using service worker.'
+    'I\'m one of the two front-end developers responsible for developing portals for investors. Responsible for building reusable forms, components and widgets.',
+    'Contributed to improving the website\'s performance by suggesting an effective caching mechanism using service worker.',
+    'Writing unit tests and taking care of deployments.',
+    'Developed responsive and user-friendly frontend code to ensure seamless and consistent user experiences across various devices and screen sizes.',
+    'Collaborated closely with design and product teams to implement new features and enhancements to the design system, resulting in improved usability and efficiency.',
+    'Actively contributed to the expansion of the design system by creating and maintaining reusable UI components, reducing development time and promoting a cohesive user experience.',
+    'Front-end: HTML 5, Javascript, SCSS.'
+  ];
+
+  final List<String> sgxExperience2 = [
+    'Played a pivotal role in the frontend development efforts within a cross-functional team working on a project utilizing Flutter, a framework for building natively compiled applications for mobile, web, and desktop from a single codebase.',
+    'Actively participated in the development and maintenance of the company\'s design system, collaborating closely with design and product teams to integrate design system components seamlessly into the Flutter codebase.',
+    'Provided valuable insights and technical expertise during code reviews, ensuring adherence to Flutter best practices and design system guidelines, resulting in a robust and scalable codebase.',
+    'Front-end: Flutter 3.16.'
+  ];
+
+  final List<String> sgxExperience3 = [
+    'Collaborated on the development of DLTribute, an internal tool built on Flutter, aimed at enhancing employee engagement and recognition within the company.',
+    'Played a vital role in the frontend development of DLTribute, implementing user interfaces and contributing to the seamless integration of blockchain technology for the employee reward system.',
+    'Worked closely with stakeholders to understand requirements and translate them into user-friendly features and functionalities, ensuring alignment with company culture and values.',
+    'Utilized Flutter\'s capabilities to create a responsive and intuitive user experience, facilitating the transfer of points and promoting a culture of recognition and appreciation.',
+    'Front-end: Flutter 3.16.'
   ];
 
   final List<String> fWExperience = [
@@ -55,238 +74,358 @@ class Projects extends StatelessWidget {
             ],
           ),
         ),
-        body: Stack(
-            children: [Container(
-            constraints: const BoxConstraints.expand(),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("lib/assets/images/background-3.jpg"),
-                fit: BoxFit.cover,
+        body: Stack(children: [
+          Container(
+              constraints: const BoxConstraints.expand(),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("lib/assets/images/background-3.jpg"),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                        padding: const EdgeInsets.symmetric(vertical: 30),
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Color(
-                                  0xffdadedfd3), // Change the color of the border here
-                              width:
-                                  1.0, // Change the thickness of the border here
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(30),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          constraints: BoxConstraints(
+                              maxWidth: (isMobile
+                                  ? double.maxFinite
+                                  : MediaQuery.of(context).size.width * 0.70)),
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Color(
+                                    0xffdadedfd3), // Change the color of the border here
+                                width:
+                                    1.0, // Change the thickness of the border here
+                              ),
                             ),
                           ),
-                        ),
-                        alignment: Alignment.topLeft,
-                        //height: 80,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Wrap(
-                              runSpacing: 10,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                Text('Senior Developer',
-                                    style: TextStyle(
-                                        fontSize: topicSize,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 2)),
-                                const SizedBox(width: 10),
-                                const Text('(December 2022 - Present)',
-                                    style: TextStyle(
-                                        fontSize: 12.0, letterSpacing: 2)),
-                              ],
-                            ),
-                            const SizedBox(height: 5),
-                            Wrap(
+                          alignment: Alignment.topLeft,
+                          //height: 80,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Wrap(
                                 runSpacing: 10,
                                 alignment: WrapAlignment.start,
                                 crossAxisAlignment: WrapCrossAlignment.center,
                                 children: [
-                                  Text('IFIS Asia Private Ltd.,',
+                                  Text('Senior Developer',
                                       style: TextStyle(
-                                          fontSize: topicSize, letterSpacing: 2)),
-                                  const Text('(Working under SGX Group - Singapore)',
+                                          fontSize: topicSize,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 2)),
+                                  const SizedBox(width: 10),
+                                  const Text('(December 2022 - Present)',
                                       style: TextStyle(
-                                          fontSize: 12, letterSpacing: 2))
-                                ])
-                          ],
-                        )),
-                    const SizedBox(height: 20),
-                    const Text('Project 1: SGX Investor Portal',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2)),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: sgxExperience.map((item) {
-                          return Row(children: [
-                            const Text(
-                              "\u2022",
-                              style: TextStyle(fontSize: 30),
-                            ), //bullet text
-                            const SizedBox(
-                              width: 10,
-                            ), //space between bullet and text
-                            Expanded(
-                              child: Text(item,
-                                  style: const TextStyle(fontSize: 16)), //text
-                            )
-                          ]);
-                        }).toList(),
+                                          fontSize: 12.0, letterSpacing: 2)),
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+                              Wrap(
+                                  runSpacing: 10,
+                                  alignment: WrapAlignment.start,
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  children: [
+                                    Text('IFIS Asia Private Ltd.,',
+                                        style: TextStyle(
+                                            fontSize: topicSize,
+                                            letterSpacing: 2)),
+                                    const Text(
+                                        '(Working under SGX Group - Singapore)',
+                                        style: TextStyle(
+                                            fontSize: 12, letterSpacing: 2))
+                                  ])
+                            ],
+                          )),
+                      const SizedBox(height: 20),
+                      const Text('Project 1: SGX Investor Portal',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2)),
+                      const SizedBox(height: 20),
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: (isMobile
+                                ? double.maxFinite
+                                : MediaQuery.of(context).size.width * 0.70)),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: sgxExperience.map((item) {
+                            return Column(children: [
+                              Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "\u2022",
+                                      style: TextStyle(fontSize: 30),
+                                    ), //bullet text
+                                    const SizedBox(
+                                      width: 10,
+                                    ), //space between bullet and text
+                                    Expanded(
+                                      child: Text(item,
+                                          style: const TextStyle(
+                                              fontSize: 16)), //text
+                                    ),
+                                  ]),
+                              const SizedBox(height: 20)
+                            ]);
+                          }).toList(),
+                        ),
                       ),
-                    ),
-            
-            
-                    const SizedBox(height: 30),
-                    Container(
-                        padding: const EdgeInsets.symmetric(vertical: 30),
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Color(
-                                  0xffdadedfd3), // Change the color of the border here
-                              width:
-                                  1.0, // Change the thickness of the border here
+                      const SizedBox(height: 20),
+                      const Text(
+                          'Project 2: Genghis (Mobile app and web unification)',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2)),
+                      const SizedBox(height: 20),
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: (isMobile
+                                ? double.maxFinite
+                                : MediaQuery.of(context).size.width * 0.70)),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: sgxExperience2.map((item) {
+                            return Column(
+                              children: [
+                                Row(children: [
+                                  const Text(
+                                    "\u2022",
+                                    style: TextStyle(fontSize: 30),
+                                  ), //bullet text
+                                  const SizedBox(
+                                    width: 10,
+                                  ), //space between bullet and text
+                                  Expanded(
+                                    child: Text(item,
+                                        style: const TextStyle(
+                                            fontSize: 16)), //text
+                                  )
+                                ]),
+                                const SizedBox(height: 10)
+                              ],
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
+                      const Text('Project 3: DLTribute',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2)),
+                      const SizedBox(height: 20),
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: (isMobile
+                                ? double.maxFinite
+                                : MediaQuery.of(context).size.width * 0.70)),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: sgxExperience3.map((item) {
+                            return Column(
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "\u2022",
+                                        style: TextStyle(fontSize: 30),
+                                      ), //bullet text
+                                      const SizedBox(
+                                        width: 10,
+                                      ), //space between bullet and text
+                                      Expanded(
+                                        child: Text(item,
+                                            style: const TextStyle(
+                                                fontSize: 16)), //text
+                                      )
+                                    ]),
+                                const SizedBox(height: 10)
+                              ],
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      Container(
+                          constraints: BoxConstraints(
+                              maxWidth: (isMobile
+                                  ? double.maxFinite
+                                  : MediaQuery.of(context).size.width * 0.70)),
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Color(
+                                    0xffdadedfd3), // Change the color of the border here
+                                width:
+                                    1.0, // Change the thickness of the border here
+                              ),
                             ),
                           ),
-                        ),
-                        alignment: Alignment.topLeft,
-                        //height: 80,
+                          alignment: Alignment.topLeft,
+                          //height: 80,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Wrap(
+                                runSpacing: 10,
+                                alignment: WrapAlignment.start,
+                                crossAxisAlignment: WrapCrossAlignment.center,
+                                children: [
+                                  Text('Lead Software Engineer - Front end',
+                                      style: TextStyle(
+                                          fontSize: topicSize,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 2)),
+                                  const SizedBox(width: 10),
+                                  const Text('(March 2018 - December 2022)',
+                                      style: TextStyle(
+                                          fontSize: 12.0, letterSpacing: 2)),
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+                              Text('Freshworks',
+                                  style: TextStyle(
+                                      fontSize: topicSize, letterSpacing: 2))
+                            ],
+                          )),
+                      const SizedBox(height: 20),
+                      const Text(
+                          'Project 1: Smart HR Software for Business (HRMS) - FRESHTEAM',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2)),
+                      const SizedBox(height: 20),
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: (isMobile
+                                ? double.maxFinite
+                                : MediaQuery.of(context).size.width * 0.70)),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Wrap(
-                              runSpacing: 10,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
+                          children: fWExperience.map((item) {
+                            return Column(
                               children: [
-                                Text('Lead Software Engineer - Front end',
-                                    style: TextStyle(
-                                        fontSize: topicSize,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 2)),
-                                const SizedBox(width: 10),
-                                const Text('(March 2018 - December 2022)',
-                                    style: TextStyle(
-                                        fontSize: 12.0, letterSpacing: 2)),
+                                Row(children: [
+                                  const Text(
+                                    "\u2022",
+                                    style: TextStyle(fontSize: 30),
+                                  ), //bullet text
+                                  const SizedBox(
+                                    width: 10,
+                                  ), //space between bullet and text
+                                  Expanded(
+                                    child: Text(item,
+                                        style: const TextStyle(
+                                            fontSize: 16)), //text
+                                  )
+                                ]),
+                                const SizedBox(height: 10)
                               ],
-                            ),
-                            const SizedBox(height: 5),
-                            Text('Freshworks',
-                                style: TextStyle(
-                                    fontSize: topicSize, letterSpacing: 2))
-                          ],
-                        )),
-                    const SizedBox(height: 20),
-                    const Text(
-                        'Project 1: Smart HR Software for Business (HRMS) - FRESHTEAM',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2)),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: fWExperience.map((item) {
-                          return Row(children: [
-                            const Text(
-                              "\u2022",
-                              style: TextStyle(fontSize: 30),
-                            ), //bullet text
-                            const SizedBox(
-                              width: 10,
-                            ), //space between bullet and text
-                            Expanded(
-                              child: Text(item,
-                                  style: const TextStyle(fontSize: 16)), //text
-                            )
-                          ]);
-                        }).toList(),
+                            );
+                          }).toList(),
+                        ),
                       ),
-                    ),
-            
-            
-                    const SizedBox(height: 30),
-                    Container(
-                        padding: const EdgeInsets.symmetric(vertical: 30),
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Color(
-                                  0xffdadedfd3), // Change the color of the border here
-                              width:
-                                  1.0, // Change the thickness of the border here
+                      const SizedBox(height: 30),
+                      Container(
+                          constraints: BoxConstraints(
+                              maxWidth: (isMobile
+                                  ? double.maxFinite
+                                  : MediaQuery.of(context).size.width * 0.70)),
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Color(
+                                    0xffdadedfd3), // Change the color of the border here
+                                width:
+                                    1.0, // Change the thickness of the border here
+                              ),
                             ),
                           ),
-                        ),
-                        alignment: Alignment.topLeft,
-                        //height: 80,
+                          alignment: Alignment.topLeft,
+                          //height: 80,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Wrap(
+                                runSpacing: 10,
+                                alignment: WrapAlignment.start,
+                                crossAxisAlignment: WrapCrossAlignment.center,
+                                children: [
+                                  Text('Developer Engineer',
+                                      style: TextStyle(
+                                          fontSize: topicSize,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 2)),
+                                  const SizedBox(width: 10),
+                                  const Text('(June 2015 - March 2018)',
+                                      style: TextStyle(
+                                          fontSize: 12.0, letterSpacing: 2)),
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+                              Text('IVTL Infoview Technologies Pvt Ltd.,',
+                                  style: TextStyle(
+                                      fontSize: topicSize, letterSpacing: 2))
+                            ],
+                          )),
+                      const SizedBox(height: 20),
+                      const Text(
+                          'Project 1: Web-based Enterprise Resource Planning tool - AI WORKS:',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2)),
+                      const SizedBox(height: 20),
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: (isMobile
+                                ? double.maxFinite
+                                : MediaQuery.of(context).size.width * 0.70)),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Wrap(
-                              runSpacing: 10,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
+                          children: ivtlExperience.map((item) {
+                            return Column(
                               children: [
-                                Text('Developer Engineer',
-                                    style: TextStyle(
-                                        fontSize: topicSize,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 2)),
-                                const SizedBox(width: 10),
-                                const Text('(June 2015 - March 2018)',
-                                    style: TextStyle(
-                                        fontSize: 12.0, letterSpacing: 2)),
+                                Row(children: [
+                                  const Text(
+                                    "\u2022",
+                                    style: TextStyle(fontSize: 30),
+                                  ), //bullet text
+                                  const SizedBox(
+                                    width: 10,
+                                  ), //space between bullet and text
+                                  Expanded(
+                                    child: Text(item,
+                                        style: const TextStyle(
+                                            fontSize: 16)), //text
+                                  )
+                                ]),
+                                const SizedBox(height: 10)
                               ],
-                            ),
-                            const SizedBox(height: 5),
-                            Text('IVTL Infoview Technologies Pvt Ltd.,',
-                                style: TextStyle(
-                                    fontSize: topicSize, letterSpacing: 2))
-                          ],
-                        )),
-                    const SizedBox(height: 20),
-                    const Text(
-                        'Project 1: Web-based Enterprise Resource Planning tool - AI WORKS:',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2)),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: ivtlExperience.map((item) {
-                          return Row(children: [
-                            const Text(
-                              "\u2022",
-                              style: TextStyle(fontSize: 30),
-                            ), //bullet text
-                            const SizedBox(
-                              width: 10,
-                            ), //space between bullet and text
-                            Expanded(
-                              child: Text(item,
-                                  style: const TextStyle(fontSize: 16)), //text
-                            )
-                          ]);
-                        }).toList(),
+                            );
+                          }).toList(),
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 30)
-                  ]),
-            ))]));
+                      const SizedBox(height: 30)
+                    ]),
+              ))
+        ]));
   }
 }
