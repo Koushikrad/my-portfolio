@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "679271016710",
+    "firebase_url": "https://my-portfolio-c788b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "my-portfolio-c788b",
+    "storage_bucket": "my-portfolio-c788b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679271016710:android:8a379b093793ed66299687",
+        "android_client_info": {
+          "package_name": "com.example.my_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHvMokmCpWpyTXgcC3YJi2CPz3LQGshng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

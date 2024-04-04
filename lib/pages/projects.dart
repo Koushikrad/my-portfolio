@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../widgets/custom_app_bar.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 class Projects extends StatelessWidget {
   // Sample project data (dummy values)
@@ -54,6 +55,9 @@ class Projects extends StatelessWidget {
   Widget build(BuildContext context) {
     var isMobile = MediaQuery.of(context).size.width < 600;
     var topicSize = isMobile ? 16.0 : 20.0;
+    FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+    analytics.logEvent(name: "page_view", parameters: {'page': 'blogs'});
 
     return Scaffold(
         appBar: CustomAppBar(

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:koushik_portfolio/pages/blog_list.dart';
@@ -6,8 +7,13 @@ import 'dart:html' as html;
 import 'package:koushik_portfolio/pages/projects.dart';
 import 'package:koushik_portfolio/widgets/custom_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const PortfolioApp());
 }
 
@@ -22,9 +28,8 @@ class PortfolioApp extends StatelessWidget {
       theme: ThemeData(
         //fontFamily: 'Roboto',
         textTheme: GoogleFonts.openSansTextTheme(),
-
       ),
-      home: const HomePage(),
+      home: HomePage(),
       routes: {
         '/blogs': (context) => const BlogList(),
         '/projects': (context) => Projects(),
@@ -34,11 +39,13 @@ class PortfolioApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   @override
   Widget build(BuildContext context) {
     var isMobile = MediaQuery.of(context).size.width < 600;
+    analytics.logEvent(name: "page_view", parameters: {'page': 'home'});
 
     return Scaffold(
       appBar: CustomAppBar(
@@ -59,7 +66,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-
       body: Stack(children: [
         Container(
           constraints: const BoxConstraints.expand(),
@@ -81,6 +87,10 @@ class HomePage extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
+                            analytics.logEvent(
+                                name: "click",
+                                parameters: {'item': 'projects'});
+
                             Navigator.pushNamed(context, '/projects');
                           },
                           child: const Text(
@@ -96,6 +106,8 @@ class HomePage extends StatelessWidget {
                         const SizedBox(height: 30),
                         InkWell(
                           onTap: () {
+                            analytics.logEvent(
+                                name: "click", parameters: {'item': 'blogs'});
                             Navigator.pushNamed(context, '/blogs');
                           },
                           child: const Text(
@@ -115,10 +127,13 @@ class HomePage extends StatelessWidget {
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xfff5461c)),
                                 onPressed: () {
-                                  html.AnchorElement anchorElement = html
-                                          .AnchorElement(
-                                      href:
-                                          'assets/lib/assets/resume/resume.pdf');
+                                  analytics.logEvent(
+                                      name: "click",
+                                      parameters: {'item': 'resume'});
+                                  html.AnchorElement anchorElement =
+                                      html.AnchorElement(
+                                          href:
+                                              'assets/lib/assets/resume/resume.pdf');
                                   anchorElement.download =
                                       'Koushik_Radhakrishnan';
                                   anchorElement.click();
@@ -140,7 +155,8 @@ class HomePage extends StatelessWidget {
 }
 
 class ProfileSection extends StatelessWidget {
-  const ProfileSection({super.key});
+  ProfileSection({super.key});
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -175,6 +191,8 @@ class ProfileSection extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
+                  analytics.logEvent(
+                      name: "click", parameters: {'item': 'linkedin'});
                   html.window.open(
                       'https://www.linkedin.com/in/koushikradhakrishnan/',
                       '_blank');
@@ -184,6 +202,8 @@ class ProfileSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  analytics.logEvent(
+                      name: "click", parameters: {'item': 'facebook'});
                   html.window
                       .open('https://www.facebook.com/Koushik.r.07/', '_blank');
                 },
@@ -192,6 +212,8 @@ class ProfileSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  analytics.logEvent(
+                      name: "click", parameters: {'item': 'instagram'});
                   html.window
                       .open('https://www.instagram.com/koushikrad/', '_blank');
                 },
