@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(30.0),
                 child: Center(
                   child: Column(children: [
-                    const ProfileSection(),
+                    ProfileSection(),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
